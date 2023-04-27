@@ -1,3 +1,6 @@
 {
-  "java.project.outputPath": "Laberinto_v1.0/bin"
+  "java.project.outputPath": "bin",
+  "java.project.sourcePaths": [
+    "src"
+  ]
 }

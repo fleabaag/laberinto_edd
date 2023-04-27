@@ -252,7 +252,7 @@ public class Vertex {
     /**
      * Setter de la coordenada Norte a la referida.
      * 
-     * @param up
+     * @param up Vertice Superior
      */
     public void setUp(Vertex up) {
         Up = up;
@@ -261,7 +261,7 @@ public class Vertex {
     /**
      * Setter de la coordenada Sur a la referida.
      * 
-     * @param down
+     * @param down Vertice inferior
      */
     public void setDown(Vertex down) {
         Down = down;
@@ -270,7 +270,7 @@ public class Vertex {
     /**
      * Setter de la coordenada Oeste a la referida.
      * 
-     * @param left
+     * @param left Vertice Izquierdo
      */
     public void setLeft(Vertex left) {
         Left = left;
@@ -279,7 +279,7 @@ public class Vertex {
     /**
      * Setter de la coordenada Este a la referida.
      * 
-     * @param right
+     * @param right Vértice Derecho
      */
     public void setRight(Vertex right) {
         Right = right;

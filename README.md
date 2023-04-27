@@ -12,29 +12,49 @@
 
 ## Dependencias
 
+- Java 17
+
 <br>
 
-## Comandos de Ejecución
+## Comandos tarea se Ejecución
 
-En la carpeta de la práctica abre la terminal y ejecuta los siguientes comandos: 
-
-```
-javac -cp '.:PilasyColas.jar' App.java    
-
-java -cp '.:PilasyColas.jar' App.java
+En la carpeta de la tarea se abre la terminal y se ejecutan los siguientes comandos: 
 
 ```
+javac -cp '.:PilasyColas.jar' Main.java    
+
+java -cp '.:PilasyColas.jar' Main {alto, ancho}
+
+```
+
+Dado que el programa usa la entrada estandar de la terminal, y que el método principal
+en Java considera las palabras _String[] args_, es necesario poner el valor de alto
+y ancho del programa entre llaves. Ejemplo {10,10}. 
+
 <br>
 
 ## Resultado previsto en terminal.
+
+Tomando, por ejemplo, un laberinto de 6x10, uno de los resultado es el siguiente: 
     
 ```
 
 ```
 
+Hay que tomar en consideración que se generan los laberintos de forma aleatoria, por lo 
+que siempre que se ejecute el programa, el resultado será diferente. 
+
+<br>
+
 ## Documentación
 
-Esta se puede ver abriendo el archivo _all_classes.html_ ubicado en la carpeta _dist/javadoc_
+Para generar la documentación se ocupa el siguiente comando en la carpeta de la tarea: 
+
+```
+javadoc -d docs src/*.java   
+
+```
+Y esta se podrá abrir en el navegador desde el archivo _allclasses-index.html_
 
 <br>
 

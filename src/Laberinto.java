@@ -204,8 +204,8 @@ public class Laberinto {
      * Primero marcamos la coordenada en cuestión como visitada y posteriormente
      * se añade a la Pila.
      * 
-     * @param i
-     * @param j
+     * @param i Punto X de la coordenada
+     * @param j Punto Y de la coordenada
      */
     public void push(int i, int j) {
         laberinto[i][j].setVisited(true);
