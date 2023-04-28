@@ -1,4 +1,5 @@
 import java.util.Random;
+import datos.PilasAndColas.Pila;
 
 /**
  * Clase Laberinto. Desde aqui funciona todo, más no se ejecuta directamente.
@@ -46,10 +47,6 @@ public class Laberinto {
      * dar sentido a las direcciones del Laberinto.
      */
     protected Pila<Vertex> llenado;
-
-    public Laberinto() {
-
-    }
 
     /**
      * Constructor del Laberinto dado paramentros de ancho y alto.
@@ -255,12 +252,13 @@ public class Laberinto {
     /**
      * Formatters
      */
-    public static String padRight(String s, int n) {
-        return String.format("%-" + n + "s", s);
-    }
-
-    public static String padLeft(String s, int n) {
-        return String.format("%" + n + "s", s);
-    }
-
+    /*
+     * public static String padRight(String s, int n) {
+     * return String.format("%-" + n + "s", s);
+     * }
+     * 
+     * public static String padLeft(String s, int n) {
+     * return String.format("%" + n + "s", s);
+     * }
+     */
 }

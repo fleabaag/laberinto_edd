@@ -340,6 +340,13 @@ public class Vertex {
         return a < 4;
     }
 
+    /**
+     * Método que soluciona el problema de revisar
+     * cuandos vecinos disponibles tiene una coordenada.
+     * 
+     * @return <code>true</code> Si tiene vecinos disponibles,
+     *         <code>false</code> en caso contrario.
+     */
     public boolean vecinosDisponiblesSolucion() {
         int a = 0;
 
@@ -377,6 +384,13 @@ public class Vertex {
             return false;
     }
 
+    /**
+     * Método para revisar, dado un valor, hacia donde se puede avanzar.
+     * 
+     * @param r Valor aleatorio hacia donde avanzar (ie, 1 = Norte, etc)
+     * @return <code>true</code> Si es cierto que se puede avanzar,
+     *         <code>false</code> en caso contrario.
+     */
     public boolean avanzarSolución(int r) {
         if (r == 0)
             return Up != null && !Up.visited && north;

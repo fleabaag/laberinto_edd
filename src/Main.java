@@ -8,7 +8,7 @@
 public class Main {
 
     /**
-     * Main del Programa usando entrada estandar de la terminal. 
+     * Main del Programa usando entrada estandar de la terminal.
      * 
      * @param args Ancho y Largo del Laberinto
      */

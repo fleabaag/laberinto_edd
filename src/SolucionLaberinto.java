@@ -1,6 +1,10 @@
+import datos.PilasAndColas.Cola;
+import datos.PilasAndColas.Pila;
+
 /**
  * Clase SoluciónLaberinto. Aqui se encuentran los métodos para
- * resolver el laberinto ya creado previamente. 
+ * resolver el laberinto ya creado previamente.
+ * 
  * @author gentle_eartquake
  * @author Wallsified
  * @version 1.0
@@ -11,17 +15,18 @@ public class SolucionLaberinto extends Laberinto {
      * Cola Para marcar la solución
      */
     protected Cola<Vertex> solucion;
-    
+
     /**
-     * Cola para marcar la trayectoria del Laberinto 
+     * Cola para marcar la trayectoria del Laberinto
      */
     protected Pila<Vertex> trayectoria;
 
     /**
-     * Constructor único de SoluciónLaberinto. 
+     * Constructor único de SoluciónLaberinto.
      * Al extender de laberinto. utilizamos ese mismo constructor
-     * para garantizar resolver el laberinto creado. 
-     * @param alto Alto del Laberinto
+     * para garantizar resolver el laberinto creado.
+     * 
+     * @param alto  Alto del Laberinto
      * @param ancho Ancho del Laberinto
      */
     public SolucionLaberinto(int alto, int ancho) {
@@ -34,7 +39,7 @@ public class SolucionLaberinto extends Laberinto {
 
     /**
      * Usando los métodos siguientes, re-entramos al laberinto
-     * para considerar que la salida siempre sea la más corta. 
+     * para considerar que la salida siempre sea la más corta.
      */
     public void asignarPesos() {
 
@@ -58,11 +63,12 @@ public class SolucionLaberinto extends Laberinto {
     }
 
     /**
-     * Método para agregar a la Cola de solución 
-     * dada la condición de que una casilla haya sido 
-     * re-visitada. 
+     * Método para agregar a la Cola de solución
+     * dada la condición de que una casilla haya sido
+     * re-visitada.
+     * 
      * @param i Posicion X de la casilla
-     * @param j Posicion Y de la casilla. 
+     * @param j Posicion Y de la casilla.
      */
     public void queue(int i, int j) {
         laberinto[i][j].setVisited(true);
@@ -71,7 +77,7 @@ public class SolucionLaberinto extends Laberinto {
 
     /**
      * Método para volver a recorrer el laberinto asigando distancias
-     * entre los vecinos. 
+     * entre los vecinos.
      */
     public void recorrer() {
 
@@ -126,11 +132,12 @@ public class SolucionLaberinto extends Laberinto {
     }
 
     /**
-     * Método para añadir las direcciónes de la trayectoria a 
-     * la pila del mismo nombre dada la condición de ser 
-     * visitado. 
+     * Método para añadir las direcciónes de la trayectoria a
+     * la pila del mismo nombre dada la condición de ser
+     * visitado.
+     * 
      * @param i Punto X de la Coordenada.
-     * @param j Punto Y de la Coordenada. 
+     * @param j Punto Y de la Coordenada.
      */
     public void pushT(int i, int j) {
         laberinto[i][j].setVisited(true);
@@ -139,7 +146,7 @@ public class SolucionLaberinto extends Laberinto {
 
     /**
      * Método compilador para trazar la trayectoria más
-     * rápida para salir del laberinto. 
+     * rápida para salir del laberinto.
      */
     public void trayectoriaSolucion() {
         undoVisited();
@@ -193,6 +200,7 @@ public class SolucionLaberinto extends Laberinto {
     /**
      * Método para evitar falsos positvos entre las coordenadas del laberinto
      * y las que se encuentran en la Pila
+     * 
      * @param v Coordenada a revisar.
      * @param P Pila de Trayectoria de Salida.
      * @return <code>true</code> Si la coordenada se encuentra en la Pila
@@ -209,7 +217,7 @@ public class SolucionLaberinto extends Laberinto {
     }
 
     /**
-     * Podemos ver este método como el toString de la trayectoria. 
+     * Podemos ver este método como el toString de la trayectoria.
      */
     public void verTrayectoria() {
 
