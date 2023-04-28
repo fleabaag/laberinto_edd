@@ -1,4 +1,3 @@
-
 ## Tarea 2: Laberinto
 
 <br>

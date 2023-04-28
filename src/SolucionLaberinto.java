@@ -1,18 +1,41 @@
-
+/**
+ * Clase SoluciónLaberinto. Aqui se encuentran los métodos para
+ * resolver el laberinto ya creado previamente. 
+ * @author gentle_eartquake
+ * @author Wallsified
+ * @version 1.0
+ */
 public class SolucionLaberinto extends Laberinto {
 
+    /**
+     * Cola Para marcar la solución
+     */
     protected Cola<Vertex> solucion;
+    
+    /**
+     * Cola para marcar la trayectoria del Laberinto 
+     */
     protected Pila<Vertex> trayectoria;
 
+    /**
+     * Constructor único de SoluciónLaberinto. 
+     * Al extender de laberinto. utilizamos ese mismo constructor
+     * para garantizar resolver el laberinto creado. 
+     * @param alto Alto del Laberinto
+     * @param ancho Ancho del Laberinto
+     */
     public SolucionLaberinto(int alto, int ancho) {
         super(alto, ancho);
         this.solucion = new Cola<>();
         this.trayectoria = new Pila<>();
         asignarPesos();
         trayectoriaSolucion();
-        // verDistancia();
     }
 
+    /**
+     * Usando los métodos siguientes, re-entramos al laberinto
+     * para considerar que la salida siempre sea la más corta. 
+     */
     public void asignarPesos() {
 
         undoVisited();
@@ -23,6 +46,9 @@ public class SolucionLaberinto extends Laberinto {
 
     }
 
+    /**
+     * Retiramos estado de visitado para volver a entrar al laberinto
+     */
     public void undoVisited() {
         for (int i = 0; i < alto; i++) {
             for (int j = 0; j < ancho; j++) {
@@ -31,11 +57,22 @@ public class SolucionLaberinto extends Laberinto {
         }
     }
 
+    /**
+     * Método para agregar a la Cola de solución 
+     * dada la condición de que una casilla haya sido 
+     * re-visitada. 
+     * @param i Posicion X de la casilla
+     * @param j Posicion Y de la casilla. 
+     */
     public void queue(int i, int j) {
         laberinto[i][j].setVisited(true);
         solucion.queue(laberinto[i][j]);
     }
 
+    /**
+     * Método para volver a recorrer el laberinto asigando distancias
+     * entre los vecinos. 
+     */
     public void recorrer() {
 
         if (solucion.peek().vecinosDisponiblesSolucion()) {
@@ -71,6 +108,9 @@ public class SolucionLaberinto extends Laberinto {
 
     }
 
+    /**
+     * Método para revisar las distancias entre casillas vecinas.
+     */
     public void verDistancia() {
         for (int i = 0; i < alto; i++) {
             for (int j = 0; j < ancho; j++) {
@@ -85,23 +125,35 @@ public class SolucionLaberinto extends Laberinto {
         }
     }
 
+    /**
+     * Método para añadir las direcciónes de la trayectoria a 
+     * la pila del mismo nombre dada la condición de ser 
+     * visitado. 
+     * @param i Punto X de la Coordenada.
+     * @param j Punto Y de la Coordenada. 
+     */
     public void pushT(int i, int j) {
         laberinto[i][j].setVisited(true);
         trayectoria.push(laberinto[i][j]);
     }
 
+    /**
+     * Método compilador para trazar la trayectoria más
+     * rápida para salir del laberinto. 
+     */
     public void trayectoriaSolucion() {
-
         undoVisited();
         pushT(alto - 1, ancho - 1);
         while (trayectoria.top().getDistancia() > 0) {
             setTrayectoria();
         }
-        System.out.println("\nTrayectoria en coordenadas:\n" + trayectoria);
+        System.out.println("\n Las coordenadas para la salida más rapida del laberinto son:\n" + trayectoria);
         verTrayectoria();
-
     }
 
+    /**
+     * Método para definir la trayectoria del laberinto.
+     */
     public void setTrayectoria() {
 
         boolean encontrado = false;
@@ -138,6 +190,14 @@ public class SolucionLaberinto extends Laberinto {
         }
     }
 
+    /**
+     * Método para evitar falsos positvos entre las coordenadas del laberinto
+     * y las que se encuentran en la Pila
+     * @param v Coordenada a revisar.
+     * @param P Pila de Trayectoria de Salida.
+     * @return <code>true</code> Si la coordenada se encuentra en la Pila
+     *         <code>false</code> en caso contrario.
+     */
     public boolean contiene(Vertex v, Pila<Vertex> P) {
         boolean output = false;
 
@@ -145,10 +205,12 @@ public class SolucionLaberinto extends Laberinto {
             if (e.equals(v))
                 output = true;
         }
-
         return output;
     }
 
+    /**
+     * Podemos ver este método como el toString de la trayectoria. 
+     */
     public void verTrayectoria() {
 
         for (int s = 0; s < ancho; s++) {
@@ -161,7 +223,7 @@ public class SolucionLaberinto extends Laberinto {
             for (int j = 0; j < ancho; j++) {
 
                 if (contiene(laberinto[i][j], trayectoria)) {
-                    System.out.print(" x");
+                    System.out.print("x ");
                     if (j + 1 == ancho)
                         System.out.print("|");
 

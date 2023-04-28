@@ -13,7 +13,6 @@ public class Main {
      * @param args Ancho y Largo del Laberinto
      */
     public static void main(String[] args) {
-        // Laberinto.start();
         int alto = Integer.parseInt(args[0]);
         int ancho = Integer.parseInt(args[1]);
         SolucionLaberinto laberinto = new SolucionLaberinto(alto, ancho);

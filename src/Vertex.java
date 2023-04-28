@@ -308,8 +308,14 @@ public class Vertex {
         Right = right;
     }
 
-    public int compareTo(Vertex vertex){
-        return distancia-vertex.distancia;
+    /**
+     * Comparador de distancias entre coordenadas
+     * 
+     * @param vertex Coordenada a comparar
+     * @return Valor de la distancia entre los puntos.
+     */
+    public int compareTo(Vertex vertex) {
+        return distancia - vertex.distancia;
     }
 
     /**
@@ -402,7 +408,7 @@ public class Vertex {
      */
     @Override
     public String toString() {
-        return "(" + x + ", " + y + ")";
+        return "(" + x + "," + y + ")";
     }
 
 }

@@ -47,8 +47,7 @@ public class Laberinto {
      */
     protected Pila<Vertex> llenado;
 
-
-    public Laberinto(){
+    public Laberinto() {
 
     }
 
@@ -152,7 +151,6 @@ public class Laberinto {
         while (!llenado.esVacia()) {
             llenar();
         }
-        System.out.println(contador);// Posible contador en pantalla no necesario?
     }
 
     /**
@@ -254,23 +252,15 @@ public class Laberinto {
         }
     }
 
-    /*
-     * *
-     * Método inicializador del laberinto.
-     * Nota: Posiblemente sea necesario pasar este método al main.
+    /**
+     * Formatters
      */
-    /*
-     * public static void start() {
-     * Scanner sc = new Scanner(System.in);
-     * System.out.print("Escribe el alto del laberinto: ");
-     * int i = sc.nextInt();
-     * System.out.print("Escribe el ancho del laberinto: ");
-     * int j = sc.nextInt();
-     * sc.close();
-     * 
-     * Laberinto laberinto = new Laberinto(i, j);
-     * laberinto.verLaberinto();
-     * 
-     * }
-     */
+    public static String padRight(String s, int n) {
+        return String.format("%-" + n + "s", s);
+    }
+
+    public static String padLeft(String s, int n) {
+        return String.format("%" + n + "s", s);
+    }
+
 }
