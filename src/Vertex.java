@@ -23,6 +23,11 @@ public class Vertex {
     private int y;
 
     /**
+     * Distancia respecto a un vértice
+     */
+    private int distancia;
+
+    /**
      * Éstos booleanos sirven como indicadores de vecinos en una dirección.
      * Vecino Norte.
      */
@@ -102,6 +107,15 @@ public class Vertex {
      */
     public int getY() {
         return y;
+    }
+
+    /**
+     * Getter de Distancia.
+     * 
+     * @return Distancia desde un vértice en particular
+     */
+    public int getDistancia() {
+        return distancia;
     }
 
     /**
@@ -205,6 +219,15 @@ public class Vertex {
     }
 
     /**
+     * Cambia la distancia que tiene el vértice
+     * 
+     * @param distancia Distancia nueva a asignar
+     */
+    public void setDistancia(int distancia) {
+        this.distancia = distancia;
+    }
+
+    /**
      * Cambia el acceso al vértice norte
      * 
      * @param north Coordenada Norte
@@ -285,6 +308,10 @@ public class Vertex {
         Right = right;
     }
 
+    public int compareTo(Vertex vertex){
+        return distancia-vertex.distancia;
+    }
+
     /**
      * Método que nos indica si dada una coordenada, ésta tiene
      * aun direcciones a donde desplazarse.
@@ -307,6 +334,21 @@ public class Vertex {
         return a < 4;
     }
 
+    public boolean vecinosDisponiblesSolucion() {
+        int a = 0;
+
+        if (Up == null || Up.visited || !north)
+            a++;
+        if (Down == null || Down.visited || !south)
+            a++;
+        if (Right == null || Right.visited || !east)
+            a++;
+        if (Left == null || Left.visited || !west)
+            a++;
+
+        return a < 4;
+    }
+
     /**
      * Método para saber si dada una coordenada, ésta tiene a donde avanzar.
      * Es el método compañero de vecinosDisponibles().
@@ -318,13 +360,26 @@ public class Vertex {
      */
     public boolean avanzar(int r) {
         if (r == 0)
-            return Up != null && Up.visited != true;
+            return Up != null && !Up.visited;
         else if (r == 1)
-            return Right != null && Right.visited != true;
+            return Right != null && !Right.visited;
         else if (r == 2)
-            return Down != null && Down.visited != true;
+            return Down != null && !Down.visited;
         else if (r == 3)
-            return Left != null && Left.visited != true;
+            return Left != null && !Left.visited;
+        else
+            return false;
+    }
+
+    public boolean avanzarSolución(int r) {
+        if (r == 0)
+            return Up != null && !Up.visited && north;
+        else if (r == 1)
+            return Right != null && !Right.visited && east;
+        else if (r == 2)
+            return Down != null && !Down.visited && south;
+        else if (r == 3)
+            return Left != null && !Left.visited && west;
         else
             return false;
     }

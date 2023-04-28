@@ -13,39 +13,44 @@ public class Laberinto {
     /**
      * Alto del Laberinto
      */
-    private int alto;
+    protected int alto;
 
     /**
      * Ancho del laberinto.
      */
-    private int ancho;
+    protected int ancho;
 
     /**
      * Total de coordenadas en el laberinto.
      * i.e un laberinto de 10x10 tiene 100 cordenadas.
      */
-    private int contador;
+    protected int contador;
 
     /**
      * Matriz de Coordenadas que se volverá el laberinto.
      */
-    private Vertex[][] laberinto;
+    protected Vertex[][] laberinto;
 
     /**
      * Coordenada de Inicio.
      */
-    private Vertex inicio;
+    protected Vertex inicio;
 
     /**
      * Coordenada de Salida
      */
-    private Vertex fin;
+    protected Vertex fin;
 
     /**
      * Pila de Vertex(Coordenadas) que usaremos para
      * dar sentido a las direcciones del Laberinto.
      */
-    private Pila<Vertex> llenado;
+    protected Pila<Vertex> llenado;
+
+
+    public Laberinto(){
+
+    }
 
     /**
      * Constructor del Laberinto dado paramentros de ancho y alto.
@@ -66,6 +71,8 @@ public class Laberinto {
         }
         esquinar();
         setMapa();
+        verLaberinto();
+
     }
 
     /**
@@ -121,6 +128,8 @@ public class Laberinto {
      */
     public void setInicio() {
         this.inicio = laberinto[0][0];
+        inicio.setDistancia(0);
+        laberinto[0][0].setDistancia(0);
     }
 
     /**

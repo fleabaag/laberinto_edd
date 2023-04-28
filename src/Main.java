@@ -16,7 +16,6 @@ public class Main {
         // Laberinto.start();
         int alto = Integer.parseInt(args[0]);
         int ancho = Integer.parseInt(args[1]);
-        Laberinto laberinto = new Laberinto(alto, ancho);
-        laberinto.verLaberinto();
+        SolucionLaberinto laberinto = new SolucionLaberinto(alto, ancho);
     }
 }
