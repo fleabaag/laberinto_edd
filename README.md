@@ -75,4 +75,15 @@ Y esta se podrá abrir en el navegador desde el archivo _allclasses-index.html_
 
 <br>
 
+## Notas
+
+- _I_ es el inicio del laberinto, por default siempre será en la coordenada (0.0). 
+- _F_ marca el final del laberinto, en la coordenada (alto, ancho).
+- _X_ es nuestra forma de ir marcando la trayectoria. 
+- _#_ son los obstaculos y/o 
+zonas por donde no pasa la trayectoria, asi mostrando que en efecto es la forma más rápida 
+de salir del laberinto.  
+
+<br>
+
 > _My bugs know what you coded in the dark..._
