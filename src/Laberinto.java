@@ -220,6 +220,7 @@ public class Laberinto {
      * Podemos ver este método como el toString() de nuestros laberintos.
      */
     public void verLaberinto() {
+        System.out.println("\nEl laberinto aleatorio generado es:");
         for (int s = 0; s < ancho; s++) {
             System.out.print(" _");
         }

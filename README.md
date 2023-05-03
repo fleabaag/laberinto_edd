@@ -17,7 +17,7 @@
 
 ## Comandos tarea se Ejecución
 
-En la carpeta _"/src"_ de la tarea se abre la terminal y se ejecutan los siguientes comandos:
+En la carpeta de la tarea se abre la terminal y se ejecutan los siguientes comandos:
 
 ```
 javac -cp ".:lib/PilasYColas.jar" -d bin src/*.java
@@ -36,31 +36,26 @@ y ancho del programa entre llaves. Ejemplo {10,10}.
 Tomando, por ejemplo, un laberinto de 6x10, uno de los resultado es el siguiente:
 
 ```
+El laberinto aleatorio generado es:
  _ _ _ _ _ _ _ _ _ _
-|I _ _  |   |  _    |
-| |   |_ _|_ _|  _|_|
-| |_|  _ _  | |_ _  |
-| |  _|   | |   |  _|
-|_ _|  _|_ _| | |_  |
-|_  | |_    | |_ _| |
-|  _|_ _ _|  _|   | |
-|_ _ _  |  _|  _| | |
-| |  _ _|_ _|_  |_  |
-|_ _ _ _ _ _ _ _|_ F|
+|I _ _   _ _|   |   |
+|_ _  |_ _  | |_ _| |
+|  _|_  | | |_  |  _|
+|  _  |_  |_  | |_| |
+|_  |_ _ _|  _|_ _  |
+|_ _ _ _ _|_ _ _ _ F|
 
- Las coordenadas para la salida más rapida del laberinto son:
-{(0,0), (0,1), (0,2), (0,3), (1,3), (1,4), (0,4), (0,5), (1,5), (1,6), (0,6), (0,7), (0,8), (1,8), (1,7), (2,7), (2,8), (2,9), (3,9), (3,8), (4,8), (4,9), (5,9), (6,9), (7,9), (8,9), (9,9)}
- _ _ _ _ _ _ _ _ _ _
-|x x x x x x x x x   |
-|      x x x x x x   |
-|              x x x |
-|                x x |
-|                x x |
-|                  x |
-|                  x |
-|                  x |
-|                  x |
-| _ _ _ _ _ _ _ _ _x |
+Las coordenadas para la salida más rapida del laberinto son:
+
+{(0,0), (0,1), (0,2), (0,3), (1,3), (1,4), (1,5), (2,5), (3,5), (3,6), (4,6), (4,5), (5,5), (5,6), (5,7), (5,8), (5,9)}
+_ _ _ _ _ _ _ _ _ _ _
+|x x x x # # # # # # |
+|# # # x x x # # # # |
+|# # # # # x # # # # |
+|# # # # # x x # # # |
+|# # # # # x x # # # |
+|# # # # # x x x x x |
+¯ ¯ ¯ ¯ ¯ ¯ ¯ ¯ ¯ ¯ ¯
 ```
 
 Hay que tomar en consideración que se generan los laberintos de forma aleatoria, por lo
@@ -77,10 +72,6 @@ javadoc -cp ".:lib/PilasYColas.jar" -d docs src/*.java
 ```
 
 Y esta se podrá abrir en el navegador desde el archivo _allclasses-index.html_
-
-<br>
-
-## Notas
 
 <br>
 

@@ -154,7 +154,7 @@ public class SolucionLaberinto extends Laberinto {
         while (trayectoria.top().getDistancia() > 0) {
             setTrayectoria();
         }
-        System.out.println("\n Las coordenadas para la salida más rapida del laberinto son:\n" + trayectoria);
+        System.out.println("\nLas coordenadas para la salida más rapida del laberinto son:\n" + trayectoria);
         verTrayectoria();
     }
 
@@ -221,31 +221,31 @@ public class SolucionLaberinto extends Laberinto {
      */
     public void verTrayectoria() {
 
-        for (int s = 0; s < ancho; s++) {
-            System.out.print(" _");
+        for (int s = -1; s < ancho; s++) {
+            System.out.print("_\s"); // top border
         }
         System.out.println();
 
         for (int i = 0; i < alto; i++) {
-            System.out.print("|");
+            System.out.print("|"); // left border
             for (int j = 0; j < ancho; j++) {
 
                 if (contiene(laberinto[i][j], trayectoria)) {
-                    System.out.print("x ");
+                    System.out.print("x "); // marker
                     if (j + 1 == ancho)
-                        System.out.print("|");
-
+                        System.out.print("|\n"); // right border
                 } else if (j + 1 == ancho) {
-                    System.out.print("  |");
+                    System.out.print("# |\n"); // right border
                 } else if (i + 1 == alto) {
-                    System.out.print(" _");
+                    System.out.print("# "); // down border
                 } else {
-                    System.out.print("  ");
+                    System.out.print("# ");
                 }
-
             }
-            System.out.println();
         }
+        for (int s = -1; s < ancho; s++) {
+            System.out.print("¯\s"); // top border
+        }
+        System.out.println("");
     }
-
 }
